@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Oluştur</title>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+    background-image: url(https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fgrand-theft-auto-v%2Fhome%2FGTAV_EGS_Artwork_1920x1080_Hero-Carousel_V06-1920x1080-1503e4b1320d5652dd4f57466c8bcb79424b3fc0.jpg);
+    background-size: cover;
+
+}
+
+.signup-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.signup-form {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <form action="#" method="post" class="signup-form" onsubmit="return hesapOlustur()">
+            <h2>Hesap Oluştur</h2>
+            <div class="form-group">
+                <label for="firstName"><i>Adınız</i></label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="lastName"><i>Soyadınız</i></label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email"><i>E-Mail</i></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="password"><i>Şifre</i></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="male"><i>Cinsiyetiniz</i></label>
+                Erkek
+                <input type="radio" id="male" name="gender">
+                Kadın
+                <input type="radio" id="female" name="gender">
+                Belirtmek İstemiyorum
+                <input type="radio" id="other" name="gender">
+            </div>
+    
+            <button type="submit">Hesap Oluştur</button>
+        </form>
+    </div>
+    
+    <script>
+        function hesapOlustur() {
+            // Hesap oluşturuldu mesajını göster
+            alert("Hesabınız başarıyla oluşturuldu!");
+    
+            // 2 saniye bekleyip index.html sayfasına yönlendir
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+    
+            // Formun hemen gönderilmesini engelle
+            return false;
+        }
+    </script>
+    
+    </body>
+</html>
+

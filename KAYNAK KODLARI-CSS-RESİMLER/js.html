@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Oluştur</title>
+    <script>
+        function hesapOlustur() {
+            // Hesap oluşturuldu mesajını göster
+            alert("Hesabınız başarıyla oluşturuldu!");
+
+            // 2 saniye bekleyip başka bir sayfaya yönlendir
+            setTimeout(function() {
+                window.location.href = "index.html"; // Yönlendirilecek sayfa URL'sini buraya ekleyin
+            }, 2000); // 2 saniye (2000 milisaniye) beklet
+        }
+    </script>
+</head>
+<body>
+    <!-- Hesap oluştur butonu, tıklanınca hesapOlustur fonksiyonunu çağırır -->
+    <button onclick="hesapOlustur()">Hesap Oluştur</button>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Font google-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 0; /* Body padding sıfırlandı */
+            margin: 0; /* Body margin sıfırlandı */
+        }
+
+        .bg-dark-blue {
+            background-color: #1a1a1a; /* Navbar arkaplan rengi güncellendi */
+            color: #fff; /* Navbar metin rengi güncellendi */
+            padding: 15px 0; /* Navbar padding güncellendi */
+        }
+
+        .container {
+            width: 80%; /* Container genişliği güncellendi */
+            margin: 0 auto; /* Container ortalama güncellendi */
+        }
+
+        #navbar {
+            display: flex; /* Navbar öğelerini yan yana yerleştirme eklendi */
+            justify-content: space-between; /* Navbar öğelerini arasında boşluk bırakma eklendi */
+            align-items: center; /* Navbar öğelerini dikeyde ortala eklendi */
+        }
+
+        .heading-small {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        #navbar ul li {
+            margin: 0 10px;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .form-container {
+            background-color: white;
+            max-width: 500px;
+            margin: 20px auto; /* Form container margin güncellendi */
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1em;
+            color: #333;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 2em;
+        }
+
+        .input-field input, .input-field textarea {
+            padding: .8em .5em .5em;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+            font-size: 1em;
+            letter-spacing: .1em;
+            outline: none;
+        }
+
+        .input-field label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: .8em .5em;
+            transition: .3s;
+            pointer-events: none;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-field input:focus + label, .input-field input:valid + label,
+        .input-field textarea:focus + label, .input-field textarea:valid + label {
+            transform: translateY(-1.5em);
+            font-size: .75em;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 1em;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background: #3498db;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background .3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark-blue">
+        <div class="container">
+            <nav id="navbar">
+                <h1 class="heading-small"><i><span style="color:rgb(201, 160, 37)">R</span><span style="color:rgb(237, 8, 176)">o</span><span style="color:rgb(25, 194, 6)">c</span><span style="color:rgb(10, 189, 221)">k</span><span style="color:rgb(239, 122, 13)">s</span><span style="color:rgb(124, 14, 233)">t</span><span style="color:rgb(211, 186, 186)">a</span><span style="color:rgb(225, 179, 13)">r</span><span style="color:rgb(23, 187, 17)">G</span><span style="color:rgb(214, 34, 139)">a</span><span style="color:rgb(143, 226, 10)">m</span><span style="color:rgb(52, 115, 202)">e</span><span style="color:rgb(52, 203, 72)">s</span></i></h1>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.html">Oyunlar</a></li>
+                    <li><a href="satinal.html">Satın Al</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="admin.html" target="_blank">Admin Girişi</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="form-container">
+        <h2>Şikayet Formu</h2>
+        <form action="/submit_şikayet" method="post">
+            <div class="input-field">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Adınız</label>
+            </div>
+            <div class="input-field">
+                <input type="email" id="email" name="email" required>
+                <label for="email">E-posta</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="subject" name="subject" required>
+                <label for="subject">Konu</label>
+            </div>
+            <div class="input-field">
+                <textarea id="message" name="message" required></textarea>
+                <label for="message">Mesajınız</label>
+            </div>
+            <input type="submit" value="Gönder">
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.querySelector('form');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+
+              
+
+                // Simulate form submission
+                alert('Şikayetiniz alınmıştır. Teşekkür ederiz!'); // You can replace this with your own confirmation message
+                form.reset(); // Optional: Reset the form fields after submission
+                setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
